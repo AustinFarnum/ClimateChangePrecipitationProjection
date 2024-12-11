@@ -5,7 +5,7 @@ Austin Farnum (farnum@udel.edu) and Carolyn Voter, University of Delaware
 This project is currently underway. The code contained within serves as an example of what has been accomplished thus far, but it has not yet been prepared for use by others without modification. Additional edits are forthcoming, but feel free to reach out if you have immediate interest.
 
 ### Upcoming Tasks:
-- [x] Develop method for temporal downscaling of coarse-resolution precipitation time series
+- [x] Develop method for pseudo temporal downscaling of coarse-resolution precipitation time series
 - [x] Create Python tool which automatically performs downscaling
 - [x] Perform pilot test of method
 - [ ] Expand testing to include 50 locations within continental US
@@ -15,7 +15,7 @@ This project is currently underway. The code contained within serves as an examp
 - [ ] Publish paper on the method
 
 ## Motivation
-This tool was made to solve a problem I faced while trying to predict the impacts of climate change on a site's stormwater system. To predict the changes in precipitation due to climate change, I downloaded a precipitation time series from the output of the CONUS 404 model. The time series, however, used an hourly time step. This is a fine resolution time step as far as climate model outputs go, but it is very coarse for stormwater models and other flashy systems. The enclosed tool was written to prepare a precipitation time series that could be used as an input for a stormwater model by means of statistical temporal downscaling. This prepared time series considers the climate model's predictions of climate change, but can have a finer time step than that which the climate model provides. The tool is designed for surface water modelers, stormwater engineers, those studying climate change, and more.
+This tool was made to solve a problem I faced while trying to predict the impacts of climate change on a site's stormwater system. To predict the changes in precipitation due to climate change, I downloaded a precipitation time series from the output of the CONUS 404 model. The time series, however, used an hourly time step. This is a fine resolution time step as far as climate model outputs go, but it is very coarse for stormwater models and other flashy systems. The enclosed tool was written to prepare a precipitation time series that could be used as an input for a stormwater model by means of pseudo temporal downscaling. This prepared time series considers the climate model's predictions of climate change, but can have a finer time step than that which the climate model provides. The tool is designed for surface water modelers, stormwater engineers, those studying climate change, and more.
 
 ## How does it work?
 The tool accepts three time series inputs:

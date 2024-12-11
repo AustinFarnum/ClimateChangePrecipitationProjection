@@ -1,11 +1,11 @@
-# Precipitation Projection Downscaler
+# Climate Change Precipitation Projection
 Austin Farnum (farnum@udel.edu) and Carolyn Voter, University of Delaware
 
 ## Note: Project Status
 This project is currently underway. The code contained within serves as an example of what has been accomplished thus far, but it has not yet been prepared for use by others without modification. Additional edits are forthcoming, but feel free to reach out if you have immediate interest.
 
 ### Upcoming Tasks:
-- [x] Develop method for pseudo temporal downscaling of coarse-resolution precipitation time series
+- [x] Develop method for precipitation projection with the effects of climate change -> pseudo temporal downscaling of coarse-resolution precipitation time series
 - [x] Create Python tool which automatically performs downscaling
 - [x] Perform pilot test of method
 - [ ] Expand testing to include 50 locations within continental US
@@ -15,13 +15,20 @@ This project is currently underway. The code contained within serves as an examp
 - [ ] Publish paper on the method
 
 ## Motivation
-This tool was made to solve a problem I faced while trying to predict the impacts of climate change on a site's stormwater system. To predict the changes in precipitation due to climate change, I downloaded a precipitation time series from the output of the CONUS 404 model. The time series, however, used an hourly time step. This is a fine resolution time step as far as climate model outputs go, but it is very coarse for stormwater models and other flashy systems. The enclosed tool was written to prepare a precipitation time series that could be used as an input for a stormwater model by means of pseudo temporal downscaling. This prepared time series considers the climate model's predictions of climate change, but can have a finer time step than that which the climate model provides. The tool is designed for surface water modelers, stormwater engineers, those studying climate change, and more.
+This tool was made to solve a problem I faced while trying to predict the impacts of climate change on a site's stormwater system. To predict the changes in precipitation due to climate change, I downloaded a precipitation time series from the output of the CONUS 404 model. The time series, however, used an hourly time step. This is a fine resolution time step as far as climate model outputs go, but it is coarse for stormwater models and other flashy systems. The enclosed tool was written to prepare a precipitation time series that could be used as an input for a stormwater model by means of projecting a historical time series into the future by applying changes in precipitation magnitude seen in climate model outputs. This prepared time series considers the climate model's predictions of climate change, but can have a finer time step than that which the climate model provides. The tool is designed for surface water modelers, stormwater engineers, those studying climate change, and more.
 
 ## How does it work?
 The tool accepts three time series inputs:
 - Climate model precipitation time series which represents past conditions
 - Climate model precipitation time series which predicts future conditions
 - Historically observed precipitation time series measured at your study site
+
+And outputs:
+- The historically observed precipitation time series projected into the future
+- Some plots describing the data
+    - CDF plots for each input dataset
+    - Climate change delta factors for each precipitation intensity
+    - Comparison of historical and projected time series
 
 The tool uses the Gumbel (type-I generalized extreme value distribution) cumulative distribution function (CDF) which is used to represent the distribution of maxima and minima within a sample. It finds the CDF value corresponding with each precipitation intensity in the three supplied time series. The tool uses a multiplicative delta method by finding the ratio of the future:past modeled precipitation intensities. The historically observed precipitation intensity with the same CDF value can then be multiplied by the associated delta to project the historically observed time series into the future. Because of this methodology, the two modeled time series provided by the user should be obtained from the same climate model for the minimization of bias in the output.
 

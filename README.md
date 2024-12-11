@@ -1,4 +1,18 @@
 # Precipitation Projection Downscaler
+## Note: Project Status
+This project is currently underway. The code contained within serves as an example of what has been accomplished thus far, but it has not yet been prepared for use by others without modification. Additional edits are forthcoming, but feel free to reach out if you have more immediate interest.
+
+### Future work:
+- [x] Develop method for temporal downscaling of coarse-resolution precipitation time series
+- [x] Create Python tool which automatically performs downscaling
+- [x] Perform pilot test of method
+- [ ] Expand testing to include 50 locations within continental US
+- [ ] Complete further analysis of test results
+- [ ] Make code universally accepting of different data types, sources, etc.
+- [ ] Write full tutorial on running and modifying the tool as needed
+- [ ] Publish paper on the method
+
+
 ## Motivation
 This tool was built for to solve a problem faced while trying to predict the impacts of climate change on a site's stormwater system. To predict the changes in precipitation due to climate change, I downloaded a precipitation time series from the output of the CONUS 404 model. The time series, however, used an hourly time step. This is a fine resolution time step as far as climate model outputs go, but it is very coarse for stormwater models and other flashy systems. The enclosed tool was written to prepare a precipitation time series that could be used as an input for a stormwater model by means of statistical temporal downscaling. This prepared time series considers the climate model's predictions of climate change, but can have a finer time step than that which the climate model provides. The tool is designed for surface water modelers, stormwater engineers, those studying climate change, and more.
 
@@ -17,6 +31,4 @@ There are two primary consequences associated with the use of this method:
 
 The simplification of climate change's effects to only changes in precipitation magnitude has a benefit relating to the reception of the stormwater modeling project's results. When the project's stakeholders, those who will ultimately receive your results and act upon your recommendations, do not commonly work with time series data or stormwater, this simplification is beneficial because it relates possible future conditions to past events contained within the observed historical time series. 
 
-> "Remember the damage caused by Hurricane Sandy in 2012? If the same storm were to hit this area in the year 2050, the flooding would be XX% more extensive and the damages would be YY% greater."
-
-
+> "Remember the damage caused by Hurricane Sandy in 2012? If the same storm were to hit this area in the year 2050, the flooding is expected to be XX% more extensive and the damage would be YY% greater."

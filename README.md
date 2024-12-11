@@ -1,8 +1,8 @@
 # Precipitation Projection Downscaler
 ## Note: Project Status
-This project is currently underway. The code contained within serves as an example of what has been accomplished thus far, but it has not yet been prepared for use by others without modification. Additional edits are forthcoming, but feel free to reach out if you have more immediate interest.
+This project is currently underway. The code contained within serves as an example of what has been accomplished thus far, but it has not yet been prepared for use by others without modification. Additional edits are forthcoming, but feel free to reach out if you have immediate interest.
 
-### Future work:
+### Tasks:
 - [x] Develop method for temporal downscaling of coarse-resolution precipitation time series
 - [x] Create Python tool which automatically performs downscaling
 - [x] Perform pilot test of method

@@ -1,2 +1,22 @@
-# downscaling
-Temporal downscaling of climate model outputs based on historical time series
+# Precipitation Projection Downscaler
+## Motivation
+This tool was built for to solve a problem faced while trying to predict the impacts of climate change on a site's stormwater system. To predict the changes in precipitation due to climate change, I downloaded a precipitation time series from the output of the CONUS 404 model. The time series, however, used an hourly time step. This is a fine resolution time step as far as climate model outputs go, but it is very coarse for stormwater models and other flashy systems. The enclosed tool was written to prepare a precipitation time series that could be used as an input for a stormwater model by means of statistical temporal downscaling. This prepared time series considers the climate model's predictions of climate change, but can have a finer time step than that which the climate model provides. The tool is designed for surface water modelers, stormwater engineers, those studying climate change, and more.
+
+## How does it work?
+The tool accepts three time series inputs:
+- Climate model precipitation time series which represents past conditions
+- Climate model precipitation time series which predicts future conditions
+- Historically observed precipitation time series measured at your study site
+
+The tool uses the Gumbel (type-I generalized extreme value distribution) cumulative distribution function (CDF) which is used to represent the distribution of maxima and minima within a sample. It finds the CDF value corresponding with each precipitation intensity in the three supplied time series. The tool uses a multiplicative delta method by finding the ratio of the future:past modeled precipitation intensities. The historically observed precipitation intensity with the same CDF value can then be multiplied by the associated delta to project the historically observed time series into the future. Because of this methodology, the two modeled time series provided by the user should be obtained from the same climate model for the minimization of bias in the output.
+
+## Implications
+There are two primary consequences associated with the use of this method:
+1. The projected time series which is output by the tool will maintain the time step of the historically observed time series you provide, so the temporal resolution of your product is limited by the frequency of rain gauge measurements, not the time step of the climate model.
+2. The projected time series maintains the storm frequency of the historically observed data, changing only the magnitude/intensity of precipitation. 
+
+The simplification of climate change's effects to only changes in precipitation magnitude has a benefit relating to the reception of the stormwater modeling project's results. When the project's stakeholders, those who will ultimately receive your results and act upon your recommendations, do not commonly work with time series data or stormwater, this simplification is beneficial because it relates possible future conditions to past events contained within the observed historical time series. 
+
+> "Remember the damage caused by Hurricane Sandy in 2012? If the same storm were to hit this area in the year 2050, the flooding would be XX% more extensive and the damages would be YY% greater."
+
+

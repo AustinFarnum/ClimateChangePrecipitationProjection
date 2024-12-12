@@ -10,6 +10,7 @@ This project is currently underway. The code contained within serves as an examp
 - [x] Perform pilot test of method
 - [ ] Expand testing to include 50 locations within continental US
 - [ ] Complete further analysis of test results
+- [ ] Improve code efficiency
 - [ ] Make code universally accepting of different data types, sources, etc.
 - [ ] Write full tutorial on running and modifying the tool as needed
 - [ ] Publish paper on the method

@@ -8,11 +8,12 @@ This project is currently underway. The code contained within serves as an examp
 - [x] Develop method for precipitation projection with the effects of climate change -> pseudo temporal downscaling of coarse-resolution precipitation time series
 - [x] Create Python tool which automatically performs downscaling
 - [x] Perform pilot test of method
-- [ ] Expand testing to include 50 locations within continental US
+- [x] Expand testing to include 50 locations within continental US
 - [ ] Complete further analysis of test results
-- [ ] Improve code efficiency
+- [x] Improve code efficiency
 - [ ] Make code universally accepting of different data types, sources, etc.
 - [ ] Write full tutorial on running and modifying the tool as needed
+- [x] Draft paper on the method
 - [ ] Publish paper on the method
 
 ## Motivation
